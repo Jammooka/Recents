@@ -1,0 +1,36 @@
+{% import "_includes/forms" as forms %}
+
+{{
+	forms.textField({
+		label: "<strong>Number of entries to track</strong>*:" | t,
+		id: 'limit',
+		name: 'limit',
+		value: (settings.limit is defined ? settings.limit : null),
+	})
+}}
+
+{{ forms.checkboxSelectField({
+	label: "<strong>Sections to track</strong>"|t,
+	id: 'sections',
+	name: 'sections',
+	options: sections,
+	values: settings.sections|length ? settings.sections : [false]
+}) }}
+
+{{
+	forms.textField({
+		label: "<strong>Entry added text</strong>*:" | t,
+		id: 'addText',
+		name: 'addText',
+		value: (settings.addText is defined ? settings.addText : null),
+	})
+}}
+
+{{
+	forms.textField({
+		label: "<strong>Entry removed text</strong>*:" | t,
+		id: 'removeText',
+		name: 'removeText',
+		value: (settings.removeText is defined ? settings.removeText : null),
+	})
+}}
