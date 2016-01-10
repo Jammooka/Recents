@@ -26,6 +26,16 @@ class RecentsPlugin extends BasePlugin
 	{
 		return 'http://www.amitywebsolutions.co.uk';
 	}
+	
+	public function getPluginUrl()
+	{
+		return 'https://github.com/Jammooka/Recents';
+	}
+	
+	public function getDocumentationUrl()
+	{
+		return $this->getPluginUrl();
+	}
 
 	public function addTwigExtension()
 	{
